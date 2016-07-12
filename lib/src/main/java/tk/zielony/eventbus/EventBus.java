@@ -33,7 +33,8 @@ public class EventBus {
         }
 
         void post(Object event) {
-            events.add(event);
+            if(event != null)
+                events.add(event);
             if (active)
                 postEvents();
         }
